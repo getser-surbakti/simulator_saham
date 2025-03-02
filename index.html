@@ -221,12 +221,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Musk Stock Trajectory Engine</h1>
-        <h2>Hyper Monte Carlo - Quantum Brownian Thrust</h2>
-        <p>Luncurkan simulator ini untuk memetakan lintasan saham masa depan Anda. Dengan kekuatan Monte Carlo dan dorongan Brownian, masukkan koordinat saham Anda—harga awal, tenaga penggerak return, turbulensi volatilitas, durasi misi, dan entropi inflasi—untuk menembus batas keuntungan kosmik.</p>
+        <h1>SIMULATOR HARGA SAHAM</h1>
+        <h2>Simulasi Monte Carlo - Gerak Brownian </h2>
+        <p>Luncurkan simulator ini untuk memetakan lintasan saham masa depan Anda. Dengan kekuatan Monte Carlo dan dorongan Brownian, masukkan koordinat saham Anda—harga awal, tenaga penggerak return, turbulensi volatilitas, durasi misi, dan entropi inflasi—untuk menembus batas keuntungan anda.</p>
 
         <div class="input-group">
-            <label for="stockName">Kode Target Saham:</label>
+            <label for="stockName">Kode Emiten Saham:</label>
             <input type="text" id="stockName" value="PT. TAKSU CAPITAL">
         </div>
 
@@ -236,22 +236,22 @@
         </div>
 
         <div class="input-group">
-            <label for="startYear">Tahun Ignisi:</label>
+            <label for="startYear">Tahun Awal:</label>
             <input type="number" id="startYear" value="2025">
         </div>
 
         <div class="input-group">
-            <label for="expectedReturn">Tenaga Penggerak Tahunan (%):</label>
+            <label for="expectedReturn">Exected Return Tahunan (%):</label>
             <input type="number" id="expectedReturn" value="0.08" step="0.01">
         </div>
 
         <div class="input-group">
-            <label for="volatility">Turbulensi Saham:</label>
+            <label for="volatility">Volatilitas Saham:</label>
             <input type="number" id="volatility" value="0.5" step="0.01">
         </div>
 
         <div class="input-group">
-            <label for="timeHorizon">Durasi Misi (Tahun):</label>
+            <label for="timeHorizon">Durasi Simulasi (Tahun):</label>
             <input type="number" id="timeHorizon" value="10">
         </div>
 
@@ -330,7 +330,7 @@
 
             const layout = {
                 title: {
-                    text: `Proyeksi Kosmik ${stockName} - ${T} Tahun`,
+                    text: `Proyeksi Harga ${stockName} - ${T} Tahun`,
                     y: 0.95,
                     x: 0.5,
                     xanchor: 'center',
@@ -368,7 +368,7 @@
             const averageEndpoint = simulations.reduce((sum, path) => sum + path[path.length - 1], 0) / M;
             const formattedAverage = formatCurrency(averageEndpoint);
             const averageResult = document.getElementById('averageResult');
-            averageResult.innerHTML = `<strong>Rata-rata Titik Pendaratan:</strong> <span>${formattedAverage}</span>`;
+            averageResult.innerHTML = `<strong>Rata-rata harga simulasi:</strong> <span>${formattedAverage}</span>`;
             averageResult.style.display = 'block';
         }
     </script>
